@@ -18,7 +18,9 @@ export default defineConfig({
       exclude: ['**/components/*.vue']
     }),
     AutoImport({
+      dts: true,
       resolvers: [ArcoResolver()],
+      imports: ['vue', 'vue-router', 'pinia']
     }),
     Components({
       resolvers: [
