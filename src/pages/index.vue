@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { login } from '@/api/user'
+
+login({
+  username: '',
+  code: ''
+}).then(res => {
+  console.log(res);
+})
 </script>
 
 <template>
