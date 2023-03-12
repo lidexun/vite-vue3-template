@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { login } from '@/api/user'
 
-login({
-  username: '',
-  code: ''
-}).then(res => {
-  console.log(res);
-})
+// login({
+//   username: '',
+//   code: ''
+// }).then(res => {
+//   console.log(res);
+// })
 </script>
 
 <template>
-<a-space>
+  <a-space>
     <a-button type="primary">Primary</a-button>
     <a-button>Secondary</a-button>
     <a-button type="dashed">Dashed</a-button>
@@ -18,5 +18,4 @@ login({
     <a-button type="text">Text</a-button>
   </a-space>
 </template>
-<style scoped>
-</style>
+<style scoped></style>

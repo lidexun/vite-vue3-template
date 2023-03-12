@@ -3,8 +3,10 @@ import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite';
-import { ArcoResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite'
+import { ArcoResolver } from 'unplugin-vue-components/resolvers'
+import eslintPlugin from 'vite-plugin-eslint'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
@@ -15,25 +17,29 @@ export default defineConfig({
       // 路由风格nuxtjs
       routeStyle: 'nuxt',
       // 排除components下的路由
-      exclude: ['**/components/*.vue']
+      exclude: ['**/components/*.vue'],
     }),
     AutoImport({
       dts: true,
       resolvers: [ArcoResolver()],
-      imports: ['vue', 'vue-router', 'pinia']
+      imports: ['vue', 'vue-router', 'pinia'],
+      eslintrc: {
+        enabled: true, // <-- this
+      },
     }),
     Components({
       resolvers: [
         ArcoResolver({
-          sideEffect: true
-        })
-      ]
-    })
+          sideEffect: true,
+        }),
+      ],
+    }),
+    eslintPlugin(),
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
-    }
+      '@': resolve(__dirname, 'src'),
+    },
   },
   server: {
     // 是否开启 https
@@ -46,5 +52,5 @@ export default defineConfig({
     cors: true,
     // 自定义代理
     proxy: {},
-  }
+  },
 })
