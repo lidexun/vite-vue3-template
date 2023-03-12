@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 export const useAppStore = defineStore('app', {
   state: () => ({
     theme: '',
@@ -6,8 +6,8 @@ export const useAppStore = defineStore('app', {
   getters: {},
   actions: {
     toggleTheme(dark: boolean) {
-      this.theme = dark ? 'dark' : 'light';
-      document.documentElement.classList[dark ? 'add': 'remove']('dark');
+      this.theme = dark ? 'dark' : 'light'
+      document.documentElement.classList[dark ? 'add' : 'remove']('dark')
     },
   },
   persist: [
@@ -15,6 +15,6 @@ export const useAppStore = defineStore('app', {
       paths: ['theme'],
       key: 'theme',
       storage: localStorage,
-    }
-  ]
+    },
+  ],
 })

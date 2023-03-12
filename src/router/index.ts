@@ -1,7 +1,4 @@
-import {
-  createRouter,
-  createWebHashHistory
-} from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import routes from '~pages'
 const router = createRouter({
   history: createWebHashHistory(),
@@ -11,8 +8,8 @@ const router = createRouter({
       el: '#app',
       top: 0,
       behavior: 'smooth',
-    };
-  }
+    }
+  },
 })
 
 export default router

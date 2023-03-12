@@ -1,12 +1,12 @@
 import axios from 'axios'
-import { Message } from '@arco-design/web-vue';
+import { Message } from '@arco-design/web-vue'
 const baseURL = import.meta.env.VITE_API_URL
 
 // 创建请求实例
 const instance = axios.create({
   baseURL,
   // 请求超时 20s
-  timeout: 20 * 1000
+  timeout: 20 * 1000,
 })
 // 前置拦截器（发起请求之前的拦截）
 instance.interceptors.request.use(
@@ -18,12 +18,12 @@ instance.interceptors.request.use(
      *  config.headers.token = token
      * }
      */
-    return response;
+    return response
   },
   (error) => {
-    return Promise.reject(error);
-  },
-);
+    return Promise.reject(error)
+  }
+)
 
 // 后置拦截器（获取到响应时的拦截）
 instance.interceptors.response.use(
@@ -32,7 +32,7 @@ instance.interceptors.response.use(
      * 根据你的项目实际情况来对 response 和 error 做处理
      * 这里对 response 和 error 不做任何处理，直接返回
      */
-    return response;
+    return response
   },
   (error) => {
     if (error.response && error.response.data) {
@@ -44,6 +44,6 @@ instance.interceptors.response.use(
       Message.error(`${error}`)
     }
     return Promise.reject(error)
-  },
-);
+  }
+)
 export default instance

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-var a = ref(1)
+let a = ref(1)
 </script>
 
 <template>
