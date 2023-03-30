@@ -17,6 +17,7 @@ specifiers:
   husky: ^8.0.3
   less: ^4.1.3
   lint-staged: ^13.2.0
+  mitt: ^3.0.0
   pinia: ^2.0.33
   pinia-plugin-persistedstate: ^3.1.0
   prettier: ^2.8.4
@@ -34,6 +35,7 @@ specifiers:
 dependencies:
   '@arco-design/web-vue': 2.43.2_vue@3.2.47
   axios: 1.3.4
+  mitt: 3.0.0
   pinia: 2.0.33_typescript@4.9.5+vue@3.2.47
   pinia-plugin-persistedstate: 3.1.0_pinia@2.0.33
   vue: 3.2.47
@@ -2966,6 +2968,10 @@ packages:
   /minimist/1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
+
+  /mitt/3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: false
 
   /mlly/1.1.1:
     resolution: {integrity: sha512-Jnlh4W/aI4GySPo6+DyTN17Q75KKbLTyFK8BrGhjNP4rxuUjbRWhE6gHg3bs33URWAF44FRm7gdQA348i3XxRw==}
